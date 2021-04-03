@@ -64,7 +64,7 @@ export default {
 <style scoped>
 #login {
   width: 500px;
-  height: 200px;
+  height: 250px;
   border: 1px solid #777777;
   background-color: #141920;
   color: #E6E6E6;
@@ -73,7 +73,7 @@ export default {
   margin-top: 50px;
   padding: 20px;
 }
-#form{
+#login > #form{
   display: flex;
   flex-flow: column;
   width:200px;

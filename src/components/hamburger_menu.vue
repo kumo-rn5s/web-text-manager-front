@@ -10,11 +10,11 @@
       <a id = "showallfiles">
         <span><router-link to="/showallfiles">ShowAllFiles</router-link></span>
       </a>
-      <a id = "login">
-        <span><router-link to="/login">Logout</router-link></span>
+      <a id = "logout">
+        <span></span>
       </a>
       <a id="userinfo">
-        <span><router-link to="/userinfo">UserInfo</router-link></span>
+        <span><router-link @click.native="Logout()">UserInfo</router-link></span>
       </a>
       <router-view></router-view>
     </Slide>
@@ -28,6 +28,15 @@ export default {
   components:{
     Slide,
   },
+  methods:{
+    Logout(){
+      this.axios.get('/logout').then(response => {
+        console.log(response);
+      }).catch(error => {
+        console.log(error);
+      })
+    }
+  }
 }
 </script>
 
