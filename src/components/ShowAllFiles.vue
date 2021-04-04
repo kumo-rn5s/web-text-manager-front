@@ -336,6 +336,9 @@ export default {
   created:function () {
     let presentPath = "";
     this.axios.get('/filepath').then(response => {
+      if (response.data.redirect){
+        this.$router.push('/')
+      }
       presentPath = response.data.presentPath
       if (presentPath !== "") {
         this.$store.commit('SetParentFilePath', presentPath)
@@ -345,6 +348,9 @@ export default {
             "changePathRequest":presentPath
           }
         }).then(response => {
+          if (response.data.redirect){
+            this.$router.push('/')
+          }
           let FileListData = response.data
           for (var item of FileListData["fileDetails-js"]){
             this.data.push(
