@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from "vue-router"
 
 
-import Login from "./components/login.vue"
+import Login from "@/components/login.vue"
 import DashBoard from "@/components/dashboard.vue"
 import CreateFile from "@/components/CreateFile.vue"
 import ShowAllFiles from "@/components/ShowAllFiles.vue"
@@ -13,8 +13,7 @@ import ShowUserInfo from "@/components/ShowUserInfo";
 Vue.use(VueRouter)
 
 const routes = [
-    {path: '/', component:Login},
-    {path: '/login', component:Login},
+    {path: '/',component: Login},
     {path: '/dashboard', component:DashBoard},
     {path: '/createfile', component: CreateFile},
     {path: '/showallfiles', component: ShowAllFiles},

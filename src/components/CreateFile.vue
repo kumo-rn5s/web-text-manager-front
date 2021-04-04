@@ -49,6 +49,9 @@ export default {
           FileName:this.$store.getters.GetAccessFilePath
         }
     }).then(response => {
+      if (response.data.redirect){
+        this.$router.push('/')
+      }
       console.log(response.data)
       if (!(response.data.isNew)) {
         this.dataStream = response.data.JSONData
@@ -74,6 +77,9 @@ export default {
             this.$refs.timer.gettime()
           } else {
             console.log("save failed")
+          }
+          if (response.data.redirect){
+            this.$router.push('/')
           }
         }).catch(error => {
           console.log(error);

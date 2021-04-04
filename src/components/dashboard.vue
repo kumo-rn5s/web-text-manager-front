@@ -35,6 +35,9 @@ export default {
   },
   created: function () {
     this.axios.get('/dashboard').then(response => {
+      if (response.data.redirect){
+        this.$router.push('/')
+      }
       console.log(response);
       this.JSONData = response.data
       // this.JSONData.task_list = this.CompileMarkdownText()

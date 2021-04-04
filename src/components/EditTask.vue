@@ -34,6 +34,9 @@ export default {
   created() {
     this.axios.get('/task')
         .then(response => {
+          if (response.data.redirect){
+            this.$router.push('/')
+          }
           this.Task = response.data;
           this.Task.task = atob(this.Task.task)
         })
@@ -53,6 +56,9 @@ export default {
         "dataStream-js": this.markdownText,
       })
       .then(response => {
+        if (response.data.redirect){
+          this.$router.push('/')
+        }
         console.log(response);
       }).catch(error => {
         console.log(error);
